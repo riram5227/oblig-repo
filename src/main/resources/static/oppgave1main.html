@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bestilling av kinobiletter</title>
+    <style>
+        .smallleftbottompad {
+            padding-left:10px;
+            padding-bottom: 10px;
+        }
+        .errormsg {
+            color:#FF0000; /* red */
+        }
+        table {
+            border:0px;
+        }
+        .tablebilletterclass {
+            display: none;
+        }
+
+    </style>
+    <script src="oppgave1script.js"></script>
+</head>
+<body>
+<h1>Bestilling av kinobiletter</h1>
+<label for="filmnavn">Velg film:</label>
+<select name="velge film" id="filmnavn" onblur="sletteTekstErrMsg(this.id);">
+    <option value="">Velg film her</option>
+    <option value="film1">Aquaman and the Lost Kingdom</option>
+    <option value="film2">Mission: Impossible – Dead Reckoning Part One</option>
+    <option value="film3">Godzilla vs. Kong</option>
+    <option value="film4">2001: A Space Odyssey</option>
+</select>
+<span id="errormsg-filmnavn" class="errormsg"></span>
+<br><br>
+<label for="antall">Antall</label>&nbsp;
+<input type="text" id="antall" name="antall" size=1 onblur="sletteTekstErrMsg(this.id)"><span  id="errormsg-antall" class="errormsg"></span>
+<br><br>
+<table>
+    <tr>
+        <td><label for="fornavn">Fornavn</label></td>
+        <td class="smallleftbottompad"><input type="text" id="fornavn" name="fornavnet" size="35" onblur="sletteTekstErrMsg(this.id)"></td>
+        <td><section id="errormsg-fornavn" class="errormsg"></section></td>
+    </tr>
+    <tr>
+        <td><label for="etternavn">Etternavn</label></td>
+        <td class="smallleftbottompad"><input type="text" id="etternavn" name="etternavnet" size="35" onblur="sletteTekstErrMsg(this.id)"></td>
+        <td><section  id="errormsg-etternavn" class="errormsg"></section></td>
+    </tr>
+    <tr>
+        <td><label for="telefonnr">Telefonnr</label></td>
+        <td class="smallleftbottompad"><input type="text" id="telefonnr" name="telefonnr" size="35" onblur="sletteTekstErrMsg(this.id)"></td>
+        <td><section id="errormsg-telefonnr" class="errormsg"></section></td>
+    </tr>
+    <tr>
+        <td><label for="epost">Epost</label></td>
+        <td class="smallleftbottompad"><input type="text" id="epost" name="epost" size="35" onblur="sletteTekstErrMsg(this.id)"></td>
+        <td><section id="errormsg-epost" class="errormsg"></section></td>
+    </tr>
+</table>
+<br><br>
+<input type="button" value="Kjøp billett" onclick="clickKjopBillett()">
+<br>
+<h3>Alle billetter</h3>
+<br>
+<table id="tablebilletter" class="tablebilletterclass">
+    <thead>
+    <tr>
+        <th>Film</th>
+        <th>Antall</th>
+        <th>Fornavn</th>
+        <th>Etternavn</th>
+        <th>Telefonnr</th>
+        <th>Epost</th>
+    </tr>
+    </thead>
+    <tbody id="tbodybilletter">
+    </tbody>
+</table>
+<br>
+<input type="button" value="Slett alle billettene" onclick="clickSlettAlleBillettene()">
+
+</body>
+</html>
